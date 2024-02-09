@@ -12,5 +12,5 @@ spec:
           memory: 256mi
         limits:
           cpu: 1000m  
-          memory: 1 Gi
+          memory: 1Gi
       
