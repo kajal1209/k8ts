@@ -7,8 +7,10 @@ spec:
     - name: jenkins
       image: jenkins/jenkins:lts-jdk17
       resources:
+        requests:
+          cpu: 500m
+          memory: 256mi
         limits:
-          cpu: 1000m 
-          memory: 1Gi
-
+          cpu: 1000m  
+          memory: 1 Gi
       
