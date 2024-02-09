@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: trail3
+spec:
+  containers:
+    - name: mysql
+      image: mysql8.0-debian
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: admin1234
+        - name: MYSQL_DATABASE
+          value: emp
+        - name: MYSQL_USER
+          value: nop
+        - name: MYSQL_PASSWORD
+          value: admin1234
+        
+        
+           
