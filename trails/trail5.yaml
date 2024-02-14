@@ -10,6 +10,18 @@ spec:
        args:
          - sleep
          - 10s
+  initContainers:
+     - name: init2
+       image: alpine
+       args:
+         - sleep
+         - 10s
+  initContainers:
+     - name: init3
+       image: alpine
+       args:
+         - sleep
+         - 10s        
   containers:
     - name: httpd
       image: httpd
@@ -17,5 +29,17 @@ spec:
         limits:
           cpu: 1000m
           memory: 0.5Gi
-           
-       
+  containers:
+    - name: nginx
+      image: ngnix
+      resources: 
+        limits:
+          cpu: 1000m
+          memory: 0.5Gi
+  containers:
+    - name: nginx2
+      image: nginx
+      resources: 
+        limits:
+          cpu: 1000m
+          memory: 0.5Gi     
