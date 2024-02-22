@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: httpd-rs
+  labels:
+    purpose: understanding
+spec:
+  minReadySeconds: 10
+  replicas: 3
+  selector:
+    matchLabels:
+      app: httpd
+  template:
+    metadata:
+      labels:
+        app: httpd
+        version: "1.0"
+        env: dev
+    spec:
+      containers:
+        - name: apache
+          image: httpd
+          ports:
+            - containerPort: 80
