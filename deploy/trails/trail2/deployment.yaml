@@ -5,7 +5,7 @@ metadata:
   name: trail2-deploy
 spec:
   minReadySeconds: 30
-  progressDeadlineSecond: 600
+  progressDeadlineSeconds: 600
   replicas: 10
   selector:
     matchLabels:
