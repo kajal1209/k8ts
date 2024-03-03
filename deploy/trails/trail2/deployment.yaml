@@ -26,13 +26,3 @@ spec:
           image: jenkins/jenkins:jdk-11
           ports:
             - containerPort: 8080
-          
-            
-              
-            
-
-          
-            
-              
-            
-            
