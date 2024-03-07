@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trail4-deploy
+spec:
+  minReadySeconds: 10
+  replicas: 3
+  selector:
+    matchLabels:
+      activity: exercise1
+  strategy:
+    type: rollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25% 
+  template:
+    metadata:
+      name: alpine 
+      labels:
+        activity: exercise1 
+    spec:
+      containers:
+        - name: alpine
+          image: alpine 
+          args: 
+            - sleep
+            - "1d"
+          ports:
+            - containerPort: 80    
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+          resources:
+            limits: 
+              cpu: 500m
+              memory: 256Mi
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: alpine-svc
+spec:
+  type: NodePort
+  selector:
+    activity: exercise1
+  ports:
+    - name: alpine
+      port: 80
+      targetPort: 80
+      nodePort: 30001
+     
