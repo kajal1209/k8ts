@@ -10,7 +10,7 @@ spec:
     matchLabels:
       activity: exercise1
   strategy:
-    type: rollingUpdate
+    type: RollingUpdate
     rollingUpdate:
       maxSurge: 25%
       maxUnavailable: 25% 
