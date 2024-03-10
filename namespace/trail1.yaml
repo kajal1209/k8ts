@@ -30,7 +30,13 @@ spec:
               cpu: 500m
               memory: 256Mi
           ports:
-            - containerPort: 80 
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: namespace
+metadata:
+  name: dev            
 
 ---
 apiVersion: v1
